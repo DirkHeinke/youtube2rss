@@ -24,4 +24,4 @@ exports.genFeed = function (id, title, description, feed_url, site_url, image_ur
     }
     
     return feed.xml();
-}
+};

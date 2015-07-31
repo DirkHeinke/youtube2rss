@@ -14,7 +14,6 @@ if(process.env.MONGO_PORT) {
     mongoose.connect('mongodb://localhost/ytrss');
 }
 
-
 var db = mongoose.connection;
 
 db.on('error', function (err) {
@@ -22,7 +21,7 @@ db.on('error', function (err) {
     process.exit(1);
 });
 
-db.once('open', function (callback) {
+db.once('open', function () {
     console.log('Connected to mongo');
 });
 
@@ -39,7 +38,7 @@ var Feed = mongoose.model('Feed', feedSchema);
 app.get('/', function(req, res) {
     res.send('To get an RSS feed to an YouTube Playlist, call http://' +
             req.headers.host +
-            '/feed/PLAYLISTID <br><br> GitHub: ....'
+            '/feed/PLAYLISTID <br><br> GitHub: https://github.com/DirkHeinke/youtube2rss'
     );
 });
 

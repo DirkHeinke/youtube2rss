@@ -3,7 +3,7 @@ var youtube = google.youtube('v3');
 
 var youtubeKey = process.env.YT_KEY;
 if(!youtubeKey) {
-    console.log('No YouTube API Key. Set env YT_KEY')
+    console.log('No YouTube API Key. Set env YT_KEY');
     process.exit(1);
 }
 
