@@ -1,5 +1,5 @@
 FROM node:0.12
-ADD *.js /app/
-ADD node_modules /app/node_modules
+ADD *.js package.json /app/
+RUN cd /app; npm install
 EXPOSE 8080
 CMD node /app/server.js
